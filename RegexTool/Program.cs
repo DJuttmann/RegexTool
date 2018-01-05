@@ -46,13 +46,23 @@ namespace RegexTool
       if (Input == null || Search == null || replace == null)
         return; // exit if required strings do not exist.
       int max = Math.Min (Search.Count, replace.Count);
+      Regex r;
       for (int i = 0; i < max; i++)
       {
-        Regex r = new Regex (Search [i]);
-        MatchCollection matches = r.Matches (Input);
-        foreach (Match m in matches)
+        try
         {
-          output.Append (m.Result (replace [i]));
+          r = new Regex (Search [i]);
+          MatchCollection matches = r.Matches (Input);
+          foreach (Match m in matches)
+          {
+            output.Append (m.Result (replace [i]));
+          }
+        }
+        catch (ArgumentException ex)
+        {
+          MessageBox.Show ("Error parsing regex: " +
+                           Environment.NewLine + ex.Message);
+          return;
         }
       }
     }
@@ -89,8 +99,17 @@ namespace RegexTool
       string temp = Input;
       for (int i = 0; i < max; i++)
       {
-        r = new Regex (Search [i]);
-        temp = r.Replace (temp, replace [i]);
+        try
+        {
+          r = new Regex (Search [i]);
+          temp = r.Replace (temp, replace [i]);
+        }
+        catch (ArgumentException ex)
+        {
+          MessageBox.Show ("Error parsing regex: " +
+                           Environment.NewLine + ex.Message);
+          return;
+        }
       }
       output = new StringBuilder (temp);
     }

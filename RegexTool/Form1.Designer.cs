@@ -52,7 +52,7 @@
       this.richTextBoxInput.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.richTextBoxInput.Location = new System.Drawing.Point(12, 37);
       this.richTextBoxInput.Name = "richTextBoxInput";
-      this.richTextBoxInput.Size = new System.Drawing.Size(723, 179);
+      this.richTextBoxInput.Size = new System.Drawing.Size(958, 223);
       this.richTextBoxInput.TabIndex = 0;
       this.richTextBoxInput.Text = "";
       // 
@@ -89,9 +89,9 @@
       // 
       // textBoxPath
       // 
-      this.textBoxPath.Location = new System.Drawing.Point(284, 10);
+      this.textBoxPath.Location = new System.Drawing.Point(318, 11);
       this.textBoxPath.Name = "textBoxPath";
-      this.textBoxPath.Size = new System.Drawing.Size(353, 22);
+      this.textBoxPath.Size = new System.Drawing.Size(515, 22);
       this.textBoxPath.TabIndex = 4;
       // 
       // labelPath
@@ -99,32 +99,32 @@
       this.labelPath.AutoSize = true;
       this.labelPath.Location = new System.Drawing.Point(241, 14);
       this.labelPath.Name = "labelPath";
-      this.labelPath.Size = new System.Drawing.Size(37, 17);
+      this.labelPath.Size = new System.Drawing.Size(75, 17);
       this.labelPath.TabIndex = 5;
-      this.labelPath.Text = "Path";
+      this.labelPath.Text = "Path prefix";
       // 
       // richTextBoxSearch
       // 
       this.richTextBoxSearch.Font = new System.Drawing.Font("Courier New", 10.2F);
-      this.richTextBoxSearch.Location = new System.Drawing.Point(12, 250);
+      this.richTextBoxSearch.Location = new System.Drawing.Point(12, 295);
       this.richTextBoxSearch.Name = "richTextBoxSearch";
-      this.richTextBoxSearch.Size = new System.Drawing.Size(365, 67);
+      this.richTextBoxSearch.Size = new System.Drawing.Size(476, 196);
       this.richTextBoxSearch.TabIndex = 6;
       this.richTextBoxSearch.Text = "";
       // 
       // richTextBoxLog
       // 
       this.richTextBoxLog.Font = new System.Drawing.Font("Courier New", 10.2F);
-      this.richTextBoxLog.Location = new System.Drawing.Point(383, 250);
+      this.richTextBoxLog.Location = new System.Drawing.Point(494, 295);
       this.richTextBoxLog.Name = "richTextBoxLog";
-      this.richTextBoxLog.Size = new System.Drawing.Size(352, 67);
+      this.richTextBoxLog.Size = new System.Drawing.Size(476, 196);
       this.richTextBoxLog.TabIndex = 7;
       this.richTextBoxLog.Text = "";
       // 
       // labelSearch
       // 
       this.labelSearch.AutoSize = true;
-      this.labelSearch.Location = new System.Drawing.Point(12, 225);
+      this.labelSearch.Location = new System.Drawing.Point(12, 272);
       this.labelSearch.Name = "labelSearch";
       this.labelSearch.Size = new System.Drawing.Size(53, 17);
       this.labelSearch.TabIndex = 8;
@@ -133,16 +133,16 @@
       // richTextBoxOutput
       // 
       this.richTextBoxOutput.Font = new System.Drawing.Font("Courier New", 10.2F);
-      this.richTextBoxOutput.Location = new System.Drawing.Point(12, 350);
+      this.richTextBoxOutput.Location = new System.Drawing.Point(12, 526);
       this.richTextBoxOutput.Name = "richTextBoxOutput";
-      this.richTextBoxOutput.Size = new System.Drawing.Size(723, 179);
+      this.richTextBoxOutput.Size = new System.Drawing.Size(958, 215);
       this.richTextBoxOutput.TabIndex = 10;
       this.richTextBoxOutput.Text = "";
       // 
       // labelOutput
       // 
       this.labelOutput.AutoSize = true;
-      this.labelOutput.Location = new System.Drawing.Point(9, 325);
+      this.labelOutput.Location = new System.Drawing.Point(12, 503);
       this.labelOutput.Name = "labelOutput";
       this.labelOutput.Size = new System.Drawing.Size(51, 17);
       this.labelOutput.TabIndex = 11;
@@ -150,7 +150,7 @@
       // 
       // buttonLog
       // 
-      this.buttonLog.Location = new System.Drawing.Point(383, 221);
+      this.buttonLog.Location = new System.Drawing.Point(494, 267);
       this.buttonLog.Name = "buttonLog";
       this.buttonLog.Size = new System.Drawing.Size(75, 23);
       this.buttonLog.TabIndex = 12;
@@ -160,7 +160,7 @@
       // 
       // buttonReplace
       // 
-      this.buttonReplace.Location = new System.Drawing.Point(485, 221);
+      this.buttonReplace.Location = new System.Drawing.Point(596, 267);
       this.buttonReplace.Name = "buttonReplace";
       this.buttonReplace.Size = new System.Drawing.Size(75, 23);
       this.buttonReplace.TabIndex = 13;
@@ -170,7 +170,7 @@
       // 
       // buttonLoad
       // 
-      this.buttonLoad.Location = new System.Drawing.Point(660, 10);
+      this.buttonLoad.Location = new System.Drawing.Point(895, 10);
       this.buttonLoad.Name = "buttonLoad";
       this.buttonLoad.Size = new System.Drawing.Size(75, 23);
       this.buttonLoad.TabIndex = 14;
@@ -180,7 +180,7 @@
       // 
       // buttonSave
       // 
-      this.buttonSave.Location = new System.Drawing.Point(660, 323);
+      this.buttonSave.Location = new System.Drawing.Point(895, 497);
       this.buttonSave.Name = "buttonSave";
       this.buttonSave.Size = new System.Drawing.Size(75, 23);
       this.buttonSave.TabIndex = 15;
@@ -196,7 +196,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(746, 541);
+      this.ClientSize = new System.Drawing.Size(982, 753);
       this.Controls.Add(this.buttonSave);
       this.Controls.Add(this.buttonLoad);
       this.Controls.Add(this.buttonReplace);
