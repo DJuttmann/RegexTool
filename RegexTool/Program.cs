@@ -8,14 +8,32 @@ using System.Text.RegularExpressions;
 
 namespace RegexTool
 {
+
+//========================================================================================
+// class Program
+//========================================================================================
+
+
   class RegexTool
   {
     public string Input = null;
-    public string Search = null;
-    public string Replace = null;
+    public List <string> Search = null;
+    private List <string> replace = null;
     private StringBuilder output = new StringBuilder (String.Empty);
+    private string NewLine = Environment.NewLine;
+
+    public List <string> Replace 
+    {
+      set
+      {
+        replace = value;
+        UnescapeReplaceStrings ();
+      }
+    }
     public string Output {get {return output.ToString ();}}
 
+
+    // Methods
 
     public void ClearOutput ()
     {
@@ -25,13 +43,17 @@ namespace RegexTool
 
     public void SearchAndLog ()
     {
-      if (Input == null || Search == null || Replace == null)
+      if (Input == null || Search == null || replace == null)
         return; // exit if required strings do not exist.
-      Regex r = new Regex (Search);
-      MatchCollection matches = r.Matches (Input);
-      foreach (Match m in matches)
+      int max = Math.Min (Search.Count, replace.Count);
+      for (int i = 0; i < max; i++)
       {
-        output.Append (m.Result (Replace));
+        Regex r = new Regex (Search [i]);
+        MatchCollection matches = r.Matches (Input);
+        foreach (Match m in matches)
+        {
+          output.Append (m.Result (replace [i]));
+        }
       }
     }
 
@@ -60,10 +82,17 @@ namespace RegexTool
 
     public void SearchAndReplace ()
     {
-      if (Input == null || Search == null || Replace == null)
+      if (Input == null || Search == null || replace == null)
         return; // exit if required strings do not exist.
-      Regex r = new Regex (Search);
-      output = new StringBuilder (r.Replace (Input, Replace));
+      int max = Math.Min (Search.Count, replace.Count);
+      Regex r;
+      string temp = Input;
+      for (int i = 0; i < max; i++)
+      {
+        r = new Regex (Search [i]);
+        temp = r.Replace (temp, replace [i]);
+      }
+      output = new StringBuilder (temp);
     }
 
 
@@ -87,8 +116,28 @@ namespace RegexTool
         }
       }
     }
+
+
+    private void UnescapeReplaceStrings ()
+    {
+      Regex newline = new Regex ("\\\\n");
+      Regex tab = new Regex ("\\\\t");
+      Regex backslash = new Regex ("\\\\\\\\");
+      string temp;
+
+      for (int i = 0; i < replace.Count; i++)
+      {
+        temp = newline.Replace (replace [i], NewLine);
+        temp = tab.Replace (temp, "\t");
+        replace [i] = backslash.Replace (temp, "\\");
+      }
+    }
   }
 
+
+//========================================================================================
+// class Program
+//========================================================================================
 
 
   static class Program

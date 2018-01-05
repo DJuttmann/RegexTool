@@ -26,11 +26,21 @@ namespace RegexTool
     }
 
 
-    private void buttonLog_Click (object sender, EventArgs e)
+    private void PrepareSearch ()
     {
       R.ClearOutput ();
-      R.Search = richTextBoxSearch.Text;
-      R.Replace = richTextBoxLog.Text;
+      List <string> search = richTextBoxSearch.Lines.ToList ();
+      List <string> replace = richTextBoxLog.Lines.ToList ();
+      while (search.Remove ("")) {}
+      while (replace.Remove ("")) {}
+      R.Search = search;
+      R.Replace = replace;
+    }
+
+
+    private void buttonLog_Click (object sender, EventArgs e)
+    {
+      PrepareSearch ();
       if (radioButtonText.Checked)
       {
         R.Input = richTextBoxInput.Text;
@@ -46,9 +56,7 @@ namespace RegexTool
 
     private void buttonReplace_Click (object sender, EventArgs e)
     {
-      R.ClearOutput ();
-      R.Search = richTextBoxSearch.Text;
-      R.Replace = richTextBoxLog.Text;
+      PrepareSearch ();
       if (radioButtonText.Checked)
       {
         R.Input = richTextBoxInput.Text;

@@ -214,7 +214,7 @@
       this.Controls.Add(this.richTextBoxInput);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.Name = "Form1";
-      this.Text = "Form1";
+      this.Text = "RegexTool";
       this.ResumeLayout(false);
       this.PerformLayout();
 
